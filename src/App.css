@@ -31,3 +31,38 @@ padding:0px;
   text-align:center;
   background-color:grey;
 }
+.todolist{
+  background-color: white;
+  margin:auto;
+  width:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  border:1px solid #5c4f4f;
+  padding:20px;
+}
+.todoitem{
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  padding:30px 30px;
+  width:75%;
+  color:#333333;
+}
+.contacts{
+  width:75%;
+  margin:auto;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+  padding:10px;
+}
+.contacts img{
+  height:250px;
+  width:300px;
+}
+.contact-card{
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:rgb(240, 154, 154);
+}
