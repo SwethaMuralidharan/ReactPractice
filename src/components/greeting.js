@@ -1,8 +1,9 @@
+import React from 'react';
 import react from 'react';
 import ReactDOM from 'react-dom';
 
-
-function Greeting(){
+class Greeting extends React.Component{
+  render(){
     const date = new Date();
     const hours = date.getHours();
     let timeOfDay;
@@ -25,5 +26,6 @@ function Greeting(){
     return(
         <h1 style={styles}> Good {timeOfDay} </h1>
     )
+  }
 }
 export default Greeting;
