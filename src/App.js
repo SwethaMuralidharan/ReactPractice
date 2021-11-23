@@ -11,15 +11,50 @@ import todosData from "./components/TodosData.js"
 
 
 class App extends React.Component{
+  constructor(){
+    super();
+    this.state={
+      name:"Swetha",
+      age:30,
+      todos:todosData,
+      isLoading:true
+    }
+    this.handleChange=this.handleChange.bind(this);
+  }
+  componentDidMount(){
+    setTimeout(()=>{
+      this.setState({
+        isLoading:false
+      })
+    },2000)
+  }
+  handleChange(id){
+    this.setState((prevState)=>{
+      const updatedTodos = prevState.todos.map(todo=>{
+        if(todo.id===id){
+            todo.completed = !todo.completed
+        }
+        return todo;
+      })
+      return {
+        todos:updatedTodos
+      }
+    })
+  }
   render(){
-    const todosItems = todosData.map(item => <TodoItem key={item.id} Titem={item} />)
+    
+    const todosItems = this.state.todos.map(item => 
+       <TodoItem key={item.id} 
+              Titem={item}
+              handleChange={this.handleChange} 
+              />)
     return(
       <div>
         <NavBar/>
-        <MainContent/>
+        <MainContent name = {this.state.name} age ={this.state.age} />
         <div className = "todolist">
           <h1> Todo List </h1>
-          {todosItems}
+         {this.state.isLoading ? "Loading": todosItems}
         </div> 
         <Greeting/>
         <div id="contacts" className="contacts">
