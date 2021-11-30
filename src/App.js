@@ -74,7 +74,9 @@ class App extends React.Component{
         </div> 
 
         <Greeting/>
-        <Form className="form"/>
+
+        <Form/>
+        
         <div id="contacts" className="contacts">
           <ContactCard contact = {{name : "Mr.Whiskerston", imgUrl:"http://placekitten.com/300/200", phone:"213-3123-321" ,email:"mr.whiskerston.meow"}}/>
           <ContactCard contact = {{name : "Mr.Meowmaster", imgUrl:"http://placekitten.com/300/300", phone:"213-3123-321", email:"mr.whiskerston.meow"}}/>
