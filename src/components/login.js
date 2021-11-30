@@ -6,11 +6,13 @@ class Login extends Component{
     }
 
     render(){
+
         let buttonText = this.props.signedin?"logged in":"logged out"
         return(
-        <div>  
-            <h3>You are {buttonText}</h3>
-            <button onClick={this.props.action}>{this.props.signedin?"logout":"login"}</button>
+        <div className="titlebar">  
+            <h1>Swetha</h1>
+            <h3>You are {buttonText} &nbsp;&nbsp;
+            <button className="loginbtn" onClick={this.props.action}>{this.props.signedin?"logout":"login"}</button></h3>
         </div>
         
         )

@@ -8,8 +8,9 @@ class Greeting extends React.Component{
     const hours = date.getHours();
     let timeOfDay;
     const styles = {
-        backgroundColor:"red",
-        fontSize:100
+        backgroundColor:"aquamarine",
+        fontSize:100,
+        textAlign:"center"
     }
     if(hours<12){
       timeOfDay = "morning";

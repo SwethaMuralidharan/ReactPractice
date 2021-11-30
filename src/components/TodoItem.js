@@ -9,6 +9,11 @@ class TodoItem extends React.Component{
             count:0
         }
     }
+    completedStyles = {
+        fontStyle:"italic",
+        color:"#cdcdcd",
+        textDecoration:"line-through"
+    }
     
     render(){
         return(
@@ -17,7 +22,7 @@ class TodoItem extends React.Component{
                     type="checkbox" 
                     checked = {this.props.Titem.completed} 
                     onChange={(event) => this.props.handleChange(this.props.Titem.id)}/>
-                    <p>{this.props.Titem.text}</p>
+                    <p style={this.props.Titem.completed ? this.completedStyles : null}>{this.props.Titem.text}</p>
             </div>     
         )
     }

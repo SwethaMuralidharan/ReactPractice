@@ -6,9 +6,10 @@ import Footer from './components/Footer.js';
 import Greeting from './components/greeting.js';
 import TodoItem from './components/TodoItem.js';
 import ContactCard from './components/contactcard.js';
-import "./App.css";
 import todosData from "./components/TodosData.js";
-import Login from "./login.js";
+import Login from "./components/login.js";
+import Form from "./components/FormContainer.js";
+import "./App.css";
 
 
 class App extends React.Component{
@@ -24,6 +25,7 @@ class App extends React.Component{
     this.handleChange=this.handleChange.bind(this);
     this.handleClick=this.handleClick.bind(this);
   }
+
   componentDidMount(){
     setTimeout(()=>{
       this.setState({
@@ -60,11 +62,9 @@ class App extends React.Component{
               />)
     return(
       <div>
-        <NavBar/>
-
         <Login signedin={this.state.isLoggedIn} action={this.handleClick}/>
 
-
+        <NavBar/>
 
         <MainContent name = {this.state.name} age ={this.state.age} />
 
@@ -74,13 +74,14 @@ class App extends React.Component{
         </div> 
 
         <Greeting/>
-
+        <Form className="form"/>
         <div id="contacts" className="contacts">
           <ContactCard contact = {{name : "Mr.Whiskerston", imgUrl:"http://placekitten.com/300/200", phone:"213-3123-321" ,email:"mr.whiskerston.meow"}}/>
           <ContactCard contact = {{name : "Mr.Meowmaster", imgUrl:"http://placekitten.com/300/300", phone:"213-3123-321", email:"mr.whiskerston.meow"}}/>
           <ContactCard contact={{ name : "Mr.GrumpyCute" ,imgUrl:"http://placekitten.com/300/400", phone:"213-3123-321", email:"mr.whiskerston.meow"}}/> 
         </div>
   
+      
         <Footer/>
         
        
